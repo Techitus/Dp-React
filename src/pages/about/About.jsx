@@ -1,9 +1,20 @@
+import { useState } from "react"
 
 const About = () => {
+  const [number, setNumber]= useState(3)
+  const increaseCount =()=>{
+    setNumber(number+1)
+  }
+  const decreaseCount =()=>{
+    setNumber(number-1)
+  }
+  // useState()
   return (
     <div>
-        <h1>This is about page</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto illum repellat eveniet libero vel quidem earum cumque soluta nulla quod quibusdam ducimus aspernatur dignissimos esse omnis, accusantium, sit neque. Ab provident odit doloribus dolor explicabo eligendi, quasi necessitatibus inventore quaerat repellendus non animi rem perferendis obcaecati rerum aspernatur, quae excepturi!</p>
+      <h1>About page</h1>
+        <h2>{number}</h2>
+        <button onClick={increaseCount}>+</button>
+        <button onClick={decreaseCount}>-</button>
     </div>
   )
 }
